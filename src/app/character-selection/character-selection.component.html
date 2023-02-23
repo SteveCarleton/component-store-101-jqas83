@@ -1,0 +1,21 @@
+<div class="button-container">
+  <button
+    (click)="toggleDetail()"
+    mat-flat-button
+    color="accent"
+    aria-label="Selected Characters"
+  >
+    Toggle Detail
+  </button>
+</div>
+
+<div *ngIf="vm$ | async as vm">
+  <mat-selection-list (selectionChange)="toggleCharacterSelection($event)">
+    <mat-list-option
+      *ngFor="let character of vm.characters"
+      [value]="character"
+    >
+      {{ character.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>

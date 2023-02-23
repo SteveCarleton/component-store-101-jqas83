@@ -1,0 +1,17 @@
+<mat-drawer-container hasBackdrop>
+  <mat-drawer
+    [mode]="'over'"
+    [opened]="sideNavStatus$ | async"
+    (closedStart)="closeSidenav()"
+    >I'm a drawer</mat-drawer
+  >
+  <mat-drawer-content>
+    <mat-toolbar>
+      <h1>Component Store 101</h1>
+    </mat-toolbar>
+    <h1>First Instance</h1>
+    <character-selection></character-selection>
+    <h1>Second Instance</h1>
+    <character-selection></character-selection>
+  </mat-drawer-content>
+</mat-drawer-container>
